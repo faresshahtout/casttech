@@ -1,0 +1,119 @@
+{% extends "index.html" %}
+<!--<!DOCTYPE html>-->
+<!--{% load static %}-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="utf-8">-->
+<!--    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">-->
+
+<!--    &lt;!&ndash; SEO Meta Tags &ndash;&gt;-->
+<!--    <meta content="Your description" name="description">-->
+<!--    <meta content="Your name" name="author">-->
+
+<!--    &lt;!&ndash; OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn &ndash;&gt;-->
+<!--    <meta content="" property="og:site_name"/> &lt;!&ndash; website name &ndash;&gt;-->
+<!--    <meta content="" property="og:site"/> &lt;!&ndash; website link &ndash;&gt;-->
+<!--    <meta content="" property="og:title"/> &lt;!&ndash; title shown in the actual shared post &ndash;&gt;-->
+<!--    <meta content="" property="og:description"/> &lt;!&ndash; description shown in the actual shared post &ndash;&gt;-->
+<!--    <meta content="" property="og:image"/> &lt;!&ndash; image link, make sure it's jpg &ndash;&gt;-->
+<!--    <meta content="" property="og:url"/> &lt;!&ndash; where do you want your post to link to &ndash;&gt;-->
+<!--    <meta content="summary_large_image" name="twitter:card"> &lt;!&ndash; to have large image post format in Twitter &ndash;&gt;-->
+
+<!--    &lt;!&ndash; Webpage Title &ndash;&gt;-->
+<!--    <title>Yavin Webpage Title</title>-->
+
+<!--    &lt;!&ndash; Styles &ndash;&gt;-->
+<!--    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap"-->
+<!--          rel="stylesheet">-->
+<!--    <link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet">-->
+<!--    <link href="{% static 'css/fontawesome-all.min.css' %}" rel="stylesheet">-->
+<!--    <link href="{% static 'css/swiper.css' %}" rel="stylesheet">-->
+<!--    <link href="{% static 'css/style.css' %}" rel="stylesheet">-->
+<!--    &lt;!&ndash; Favicon  &ndash;&gt;-->
+<!--    <link href="{% static 'images/favicon.png'%}" rel="icon">-->
+
+
+<!--    <link href="-->
+<!--https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">-->
+
+<!--    <script src="-->
+<!--https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js">-->
+<!--    </script>-->
+<!--    <script crossorigin="anonymous" src='https://kit.fontawesome.com/8dc45e68aa.js'></script>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--&lt;!&ndash; Navigation &ndash;&gt;-->
+<!--<nav aria-label="Main navigation" class="navbar navbar-expand-lg fixed-top navbar-light" id="navbar"-->
+<!--     style="background-image: url({% static 'images/bg.png'%}); background-repeat: no-repeat; background-attachment: fixed; background-size: 100%;">-->
+<!--    <div class="container">-->
+<!--        &lt;!&ndash; Image Logo &ndash;&gt;-->
+<!--        <a class="navbar-brand logo-image" href="{% url 'home'%}"><img alt="alternative" src="{% static 'images/logo.svg'%}"></a>-->
+
+<!--        <button aria-label="Toggle navigation" class="navbar-toggler p-0 border-0" id="navbarSideCollapse"-->
+<!--                type="button">-->
+<!--            <span class="navbar-toggler-icon"></span>-->
+<!--        </button>-->
+
+<!--        <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">-->
+<!--            <ul class="navbar-nav ms-auto navbar-nav-scroll">-->
+<!--                <li class="nav-item">-->
+<!--                    <a aria-current="page" class="nav-link active custom-btn-hov" href="#about">About</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link custom-btn-hov" href="#features">Features</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link custom-btn-hov" href="#faq">FAQ</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link custom-btn-hov" href="#technology">Technology</a>-->
+<!--                </li>-->
+<!--            </ul>-->
+<!--            <div style="margin-right: 200px;"></div>-->
+<!--            <span class="nav-item">-->
+<!--                    <a class="btn-outline-sm" data-bs-target="#exampleModal" data-bs-toggle="modal" href="">Login</a>-->
+<!--                    <a class="btn-outline-sm-2" href="#contact">Contact us</a>-->
+<!--                </span>-->
+<!--        </div> &lt;!&ndash; end of navbar-collapse &ndash;&gt;-->
+<!--    </div> &lt;!&ndash; end of container &ndash;&gt;-->
+<!--</nav> &lt;!&ndash; end of navbar &ndash;&gt;-->
+<!--&lt;!&ndash; end of navigation &ndash;&gt;-->
+
+{% block content %}
+<!-- Request Form    -->
+<div class="basic-3">
+        <div class="container">
+        	<div class="row mt-5 justify-content-center align-content-center align-items-center text-center">
+        		<div class="row ">
+        			<div class="col w-50">
+	        			<h3 class="text-center">
+	                		3D Scanning
+	                	</h3>
+	        		</div>
+	        		<div class="col w-50">
+	        			<h3 class="text-center">
+	                		Measurements
+	                	</h3>
+	        		</div>
+        		</div>
+        		<div class="col " style="margin-right: 0px;">
+        			<div class="container crd" style="margin-right: 0px;">
+        				<img src="{% static 'images/scan.png' %}" class="img-fluid crd-img" alt="...">
+					  	<br>
+					    <a class="btn-strt" href="{% url 'uploadACsv' %}">Start</a>
+        			</div>
+        		</div>
+        		<div class="col " style="margin-left: 0px;">
+        			<div class="container crd" style="margin-left: 0px;">
+        				<img src="{% static 'images/measure.png' %}" class="img-fluid crd-img" alt="...">
+        				<br>
+					    <a class="btn-strt" href="{% url 'request_a_cast' %}">Start</a>
+        			</div>
+        		</div>
+            </div>
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-3 -->
+{% endblock %}
+<!--</body>-->
+</html>

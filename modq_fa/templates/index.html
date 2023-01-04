@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Your description">
+    <meta name="author" content="Your name">
+
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
+ <meta property="og:site_name" content="" /> <!-- website name -->
+ <meta property="og:site" content="" /> <!-- website link -->
+ <meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
+ <meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+ <meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+ <meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+ <meta name="twitter:card" content="summary_large_image"> <!-- to have large image post format in Twitter -->
+
+    <!-- Webpage Title -->
+    <title>CastTech 3d cast</title>
+    
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/fontawesome-all.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/swiper.css' %}" rel="stylesheet">
+    <link href="{% static 'css/styling.css' %}" rel="stylesheet">
+
+    
+
+ <!-- Favicon  -->
+    <link rel="icon" href="images/favicon.png">
+</head>
+<body>
+    
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation"  style="background-image: url({% static 'images/bg.png' %}); background-repeat: no-repeat; background-attachment: fixed; background-size: 100%;">
+        
+        <div class="container">
+<!-- <img class="decoration-star-2" src="images/shaper.svg" alt="alternative">
+        <img class="decoration-star" src="images/shapel.svg" alt="alternative"> -->
+            <!-- Image Logo -->
+            <a class="navbar-brand logo-image" href="{% url 'home'%}"><img src="{%static 'images/logoo.png' %}" alt="alternative"></a>
+
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text" href="index.html">Yavin</a> -->
+
+            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                    <li class="nav-item">
+                        <a class="nav-link active custom-btn-hov" aria-current="page" href="{% url 'home'%}#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link custom-btn-hov" href="{% url 'home'%}#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link custom-btn-hov" href="{% url 'home'%}#technology">Technology</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link custom-btn-hov" href="{% url 'home'%}#faq">FAQ</a>
+                    </li>
+                    <!-- <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">Drop</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdown01">
+                            <li><a class="dropdown-item" href="article.html">Article Details</a></li>
+                            <li><div class="dropdown-divider"></div></li>
+                            <li><a class="dropdown-item" href="terms.html">Terms Conditions</a></li>
+                            <li><div class="dropdown-divider"></div></li>
+                            <li><a class="dropdown-item" href="privacy.html">Privacy Policy</a></li>
+                        </ul>
+                    </li> -->
+                </ul>
+                <div style="margin-right: 200px;"></div>
+              <div class="welcome-and-logout"> <span class="nav-item">
+                    {% if user.is_authenticated %}
+                    <h4 style="color: white;">HELLO  {{request.user}}</h4>
+                    <form method="POST">{% csrf_token %}
+                        <a  href="/logout" class="btn-outline-sm">Logout</a>
+                    </form>
+                    {% else %}
+                    <a class="btn-outline-sm" href=""  data-bs-toggle="modal" data-bs-target="#exampleModal">Login</a>
+                    <a class="btn-outline-sm-2"  href="#contact">Contact us</a>
+                    {% endif %}
+                </span></div>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+
+      {% block content %}
+    <!-- Header -->
+    <header id="header" class="header"  style="background-image: url({% static 'images/bg.png' %}); background-repeat: no-repeat; background-attachment: fixed; background-size: 100%;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 col-xl-5">
+                    <div class="text-container">
+                        <h3 style="color: #43C6AC;">WELCOME</h3>
+                        <h1 class="h1-large">3D Printed Cast</h1>
+                        <p class="p-large">Our Project aims to Provide a high quality 3d <br> cast that can provide comfort for the patient.<br>the process begins by doing a 3d body image <br> of a patients arm.</p>
+                        {% if user.is_authenticated %}
+                        <a class="btn-solid-lg" href="{% url 'choose' %}">Request a cast</a>
+                        {% endif %}
+                        <a class="btn-outline-lg" style="border-radius: 10px;" href="#contact">Learn more</a>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <div class="col-lg-5 col-xl-7">
+                    <div class="image-container">
+                        <img class="img-fluid" src="{% static 'images/header.png' %}" alt="alternative">
+                    </div> <!-- end of image-container -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of header -->
+    <!-- end of header -->
+
+
+
+
+    <!-- Details 2  to About -->
+    <div class="basic-3" >
+        <!-- <img class="decoration-star" src="images/decoration-star.svg" alt="alternative"> -->
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-6 col-xl-7" id="about">
+                    <div class="text-container">
+                        <h2  style="width: 120px; height: 3px; background-color: #43C6AC;"></h2>
+                        <h2>About</h2>
+                        <p>CastTech 3D printed cast for your Convenience<br> </p>
+                        <a class="btn" style="background-color: white; color: #43C6AC; border: none; font-size: 20px;" href="#contact">Get A Consultation <i class="fa fa-angle-right fa-lg" aria-hidden="true"></i></a>
+
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <div class="col-lg-6 col-xl-5">
+                    <img class="img-fluid" src="{% static 'images/about.png' %}" style="margin-top:120px;">
+                </div>
+<!--                <div class="col-lg-6 col-xl-5">-->
+<!--                    <div class="image-container" style="margin-top: 120px;">-->
+<!--                        &lt;!&ndash; <img class="img-fluid" src="images/details-2.png" alt="alternative"> &ndash;&gt;-->
+<!--                        <div class="container" style="background-color: #191645; height: 40px; width: 350px;">-->
+<!--                        </div>-->
+<!--                        <div class="container border" style="width: 350px; height: 550px;   border: 1px solid #BFBFBF; box-shadow: 0px 5px 10px 0px darkgrey; border-top: none;" >-->
+<!--                            <br>-->
+<!--                            <form>-->
+<!--                                <div class="form-group">-->
+<!--                                    <input type="text" class="form-control-input" placeholder="Name" required>-->
+<!--                                </div>-->
+<!--                                <div class="form-group">-->
+<!--                                    <input type="email" class="form-control-input" placeholder="Email" required>-->
+<!--                                </div>-->
+<!--                                <div class="form-group">-->
+<!--                                    <input type="text" class="form-control-input" placeholder="phone" required>-->
+<!--                                </div>-->
+<!--                                <div class="form-group">-->
+<!--                                    <textarea class="form-control-textarea" placeholder="Message" required></textarea>-->
+<!--                                </div>-->
+<!--                                <div class="form-group">-->
+<!--                                    <button type="submit" class="form-control-submit-button" >Send</button>-->
+<!--                                </div>-->
+<!--                            </form>-->
+<!--                        </div>-->
+<!--                    </div> &lt;!&ndash; end of image-container &ndash;&gt;-->
+<!--                </div> &lt;!&ndash; end of col &ndash;&gt;-->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-3 -->
+    <!-- end of details 2 to features -->
+
+
+    <!-- Invitation to features -->
+    <div class="basic-4" id="features">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-12">
+                    <h2  style="width: 120px; height: 3px; background-color: #43C6AC;"></h2>
+                <h2 style="text-align: left;">FEATURES</h2>
+                    <img class="img-fluid features-img" src=" {% static 'images/acharacteristics2.png' %}">
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-4 -->
+    <!-- end of invitation to features -->
+
+    
+<!-- Projects 1 to technology -->
+    <div class="cards-2" id="technology">
+        <div class="container">
+            <h2  style="width: 120px; height: 3px; background-color: #43C6AC;"></h2>
+        <h2>Technology</h2>
+            
+            <div class="row">
+                <div class="col-lg-12">
+                    <img class="img-fluid" src="{% static 'images/stepss3.png' %}" alt="alternative" style="width: 97%; height: 97%;">
+
+                <div id="faq"></div>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+
+    </div> <!-- end of cards-2 -->
+    <!-- end of projects -->
+
+    
+    <!-- FAQ -->
+    <div class="container"  style="padding-bottom: 100px;">
+        <h2  style="width: 120px; height: 3px; background-color: #43C6AC;"></h2>
+        <h2>FAQ</h2>
+        <br>
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Why should i buy the 3d cast instead of the normal cast?
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            3D casts are lighter and prestigious and it is waterproof and can be reused and many more.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Can i order if i'm not a doctor?
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            Unfortunately our product can be purchased only by doctors.However, in the Future it could be bought by normal people.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            How can i make an account?
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            You can join our family and make an account by clicking on the login button in the top right corner or by clicking on request.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingFour">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+            Can i use the same cast more than one time?
+          </button>
+        </h2>
+        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            Yes, our product is reusable.However it is reusable for the same preson who used it before only.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingFive">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+            How can i track my order?
+          </button>
+        </h2>
+        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            You can track your order through our website.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingSix">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+            What is your return policy?
+          </button>
+        </h2>
+        <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            the transition does limit overflow.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingSeven">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+            When will i get my refund?
+          </button>
+        </h2>
+        <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+             the transition does limit overflow.
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+    <!-- Projects to partners -->
+    <!-- <div id="partners" class="cards-2">
+        <div class="container" id="contact">
+            <div class="row">
+                <div class="col-lg-12"> -->
+<!--                    <h2 class="h2-heading">Our Partners</h2>-->
+<!--                </div> &lt;!&ndash; end of col &ndash;&gt;-->
+<!--            </div> &lt;!&ndash; end of row &ndash;&gt;-->
+<!--            <div class="row">-->
+<!--                <div class="col-lg-12 text-center">-->
+
+<!--                    &lt;!&ndash; Card &ndash;&gt;-->
+<!--                    <div class="card">-->
+<!--                        <img class="img-fluid" src="{% static 'images/h-abdali.png' %}" alt="alternative">-->
+
+<!--                    </div>-->
+<!--                    &lt;!&ndash; end of card &ndash;&gt;-->
+
+<!--                    &lt;!&ndash; Card &ndash;&gt;-->
+<!--                    <div class="card">-->
+<!--                        <img class="img-fluid" src="{% static 'images/h-istiklal.png' %}" alt="alternative">-->
+
+<!--                    </div>-->
+<!--                    &lt;!&ndash; end of card &ndash;&gt;-->
+
+<!--                    &lt;!&ndash; Card &ndash;&gt;-->
+<!--                    <div class="card">-->
+<!--                        <img class="img-fluid" src="{% static 'images/h-istishari.png' %}" alt="alternative">-->
+
+<!--                    </div>-->
+<!--                    &lt;!&ndash; end of card &ndash;&gt;-->
+
+<!--                    &lt;!&ndash; Card &ndash;&gt;-->
+<!--                    <div class="card">-->
+<!--                        <img class="img-fluid" src="{% static 'images/h-speciality.png' %}" alt="alternative">-->
+<!--                    </div>-->
+<!--                    &lt;!&ndash; end of card &ndash;&gt;-->
+
+<!--                    &lt;!&ndash; Card &ndash;&gt;-->
+<!--                    <div class="card">-->
+<!--                        <img class="img-fluid" src="{% static 'images/h-jordan.png' %}" alt="alternative">-->
+<!--                    </div>-->
+                    <!-- end of card -->
+    {% endblock %}
+
+                <!-- </div> --> <!-- end of col -->
+            <!-- </div> --> <!-- end of row -->
+        <!-- </div> --> <!-- end of container -->
+    <!-- </div> --> <!-- end of cards-2 -->
+    <!-- end of projects -->
+
+    <!-- testimonials -->
+    <!-- contact -->
+
+
+
+    <!-- Footer -->
+    <div class="footer" style="background-color: #191645;" >
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer-col first">
+                        <h6>CastTech</h6>
+                            <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-linkedin-in fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-youtube fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-facebook-f fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-twitter fa-stack-1x"></i>
+                            </a>
+                        </span>
+                    </div> <!-- end of footer-col -->
+                    <div class="footer-col second" >
+                        <!-- style="border: 2px solid #43C6AC; border-color: #43C6AC; padding: 10px; border-radius: 30px;" -->
+                        <h6>Contact Us</h6>
+                        <p style="color: #FCD79C; font-size: 13px;">We will be in touch and contact you soon!</p>
+                        <form>
+                            <div class="form-group">
+                                <input type="text" class="form-control-input" placeholder="Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control-input" placeholder="Email Address" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control-textarea" placeholder="Message" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="form-control-submit-button" style="background-color: #43C6AC;">Send</button>
+                            </div>
+                        </form>
+                    </div> <!-- end of footer-col -->
+                    <div class="footer-col third">
+                    <h6>Links</h6>
+                        <ul class="list-unstyled li-space-lg p-small">
+                            <li><a href="#partners">Our Partners</a></li>
+                            <li><a href="#faq">FAQ</a></li>
+                            <li><a href="#technology">Technology</a></li>
+                            <li><a href="#about">About Us</a></li>
+                            <li><a href="#header">Home</a></li>
+                        </ul>
+                    </div> <!-- end of footer-col -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of footer -->  
+    <!-- end of footer -->
+
+
+    <!-- Copyright -->
+    <div class="copyright" style="background-color: #191645;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="p-small">Copyright © <a href="#your-link">CasTech</a></p>
+                </div> <!-- end of col -->
+            </div> <!-- enf of row -->
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="p-small">Distributed By <a href="https://themewagon.com/">CasTech</a></p>
+                </div> <!-- end of col -->
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright --> 
+    <!-- end of copyright -->
+    
+
+    <!-- Back To Top Button -->
+    <button onclick="topFunction()" id="myBtn">
+        <img src="{% static 'images/up-arrow.png' %}" alt="alternative">
+    </button>
+    <!-- end of back to top button -->
+  
+
+
+
+   
+<!-- sign up Modal -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link custom-tab active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">I'm a doctor</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link custom-tab" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">I'm a patient</button>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+              <form method="POST">{% csrf_token %}
+                  <div class="form-group">
+                      {% for field in register_form %}
+                      <br>
+                      <br>
+                      {{field}}
+                      {% if field == register_form.password1 %}
+                      <p style="color: red"> password should be 8 letters long containing at least a number a special sympol and an upper case letter</p>
+                      {% endif %}
+                      {% endfor %}
+<!--                      <br><br>-->
+<!--                      <input type="text" name="" class="form-control-input" placeholder="Name" required>-->
+<!--                      <br><br>-->
+<!--                      <input type="text" name="" class="form-control-input" placeholder="Email" required>-->
+<!--                      <br><br>-->
+<!--                      <input type="text" name="" class="form-control-input" placeholder="Hospital Name" required>-->
+<!--                      <br><br>-->
+<!--                      <input type="text" name="" class="form-control-input" placeholder="Phone Number" required>-->
+<!--                      <br><br>-->
+                      <div class="form-group">
+                          <label>
+                              <input type="checkbox" class="form-check-input" name="" required> &nbsp; Agree to Privarcy & Terms
+                          </label>
+                      </div>
+                      <br>
+                      <div class="text-center">
+                      <button class="btn custom-btn" name="Submit" value="signup">Sign Up</button>
+                      <br><br>
+                      Already Have Account? <a class="sign" href="" data-bs-toggle="modal" data-bs-dismiss="modal" data-bs-target="#exampleModal" id="modal2"> Sign In</a>
+                      </div>
+                  </div>
+              </form>
+          </div>
+          <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+              <form method="POST">{% csrf_token %}
+                  <div class="form-group">
+                      <br><br>
+                      <input type="text" name="" class="form-control-input" placeholder="Name" required>
+                      <br><br>
+                      <input type="text" name="" class="form-control-input" placeholder="Phone Number" required>
+                      
+                      <br><br>
+                      <div class="text-center">
+                      <button class="btn custom-btn">Send</button>
+                      <br><br>
+                      <p>We will be in touch and contact you soon</p>
+                      </div>
+                  </div>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end of sign up modal -->     
+
+
+    
+<!-- login Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <br><br><br>
+        <h2 style="color: #43C6AC;" class="text-center">SIGN IN</h2>
+         <form method="post"> {% csrf_token %}
+                  <div class="form-group">
+                    {% for field in signinform %}
+                      <br><br>
+                      {{field}}
+                      {% endfor %}
+                      <div class="form-group">
+                      </div>
+                      <br>
+                      <div class="text-center">
+                      <input type="submit" class="btn custom-btn" name="Submit" value="signin"></input>
+                      <br><br>
+                      You Don't Have An Account? <a class="sign" href="" data-bs-toggle="modal" data-bs-dismiss="modal" data-bs-target="#exampleModal2" id="modal"> Sign Up</a>
+                      </div>
+                  </div>
+              </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end of login modal -->
+
+
+
+    <!-- Scripts -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script> <!-- Bootstrap framework -->
+    <script src="{% static 'js/swiper.min.js' %}"></script> <!-- Swiper for image and text sliders -->
+    <script src="{% static 'js/purecounter.min.js' %}"></script> <!-- Purecounter counter for statistics numbers -->
+    <script src="{% static 'js/scripts.js' %}"></script> <!-- Custom scripts -->
+    <script> var elem = document.getElementById('id_username');
+     elem.classList.add("form-control-input");
+     elem.placeholder="Username"
+     var elem = document.getElementById('id_password');
+     elem.classList.add("form-control-input");
+     elem.placeholder="Password"
+
+</script>
+</body>
+</html>

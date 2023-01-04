@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1000" height="1000" viewBox="0 0 1000 1000" xml:space="preserve">
+<desc>Created with Fabric.js 3.5.0</desc>
+<defs>
+</defs>
+<rect x="0" y="0" width="100%" height="100%" fill="#ffffff"/>
+<g transform="matrix(6.5876 0 0 6.5876 499.9989 499.999)" id="585260">
+<ellipse style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; is-custom-font: none; font-file-url: none; fill: rgb(38,170,162); fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke" cx="0" cy="0" rx="69" ry="68.5"/>
+</g>
+<g transform="matrix(16.2989 18.5771 -18.5771 16.2989 500 500.0005)" id="370149">
+<path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; is-custom-font: none; font-file-url: none; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke" transform=" translate(-12.0014, -12.0001)" d="M 15.2528 1.99854 C 16.2193 1.99854 17.0028 2.78204 17.0028 3.74854 L 17.0028 20.2517 C 17.0028 21.2182 16.2193 22.0017 15.2528 22.0017 H 8.75 C 7.7835 22.0017 7 21.2182 7 20.2517 V 3.74854 C 7 2.78204 7.7835 1.99854 8.75 1.99854 H 15.2528 Z M 12.2501 8.00012 H 8.50001 V 9.50012 H 12.2501 C 12.6643 9.50012 13.0001 9.16434 13.0001 8.75012 C 13.0001 8.33591 12.6643 8.00012 12.2501 8.00012 Z M 10.327 11.2482 H 8.50001 L 8.50001 12.7482 H 10.327 C 10.7412 12.7482 11.077 12.4124 11.077 11.9982 C 11.077 11.584 10.7412 11.2482 10.327 11.2482 Z M 12.2501 14.5001 H 8.50001 V 16.0001 H 12.2501 C 12.6643 16.0001 13.0001 15.6643 13.0001 15.2501 C 13.0001 14.8359 12.6643 14.5001 12.2501 14.5001 Z M 10.327 17.5001 H 8.50001 L 8.50001 19.0001 H 10.327 C 10.7412 19.0001 11.077 18.6643 11.077 18.2501 C 11.077 17.8359 10.7412 17.5001 10.327 17.5001 Z M 10.327 4.99847 H 8.50001 V 6.49847 H 10.327 C 10.7412 6.49847 11.077 6.16269 11.077 5.74847 C 11.077 5.33426 10.7412 4.99847 10.327 4.99847 Z" stroke-linecap="round"/>
+</g>
+</svg>
